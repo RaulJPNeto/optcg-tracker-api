@@ -1,0 +1,50 @@
+# Dependencies
+/vendor/
+node_modules/
+
+# Laravel
+bootstrap/compiled.php
+app/storage/
+public/storage
+public/hot
+public_html/storage
+public_html/hot
+storage/*.key
+/public/build
+/storage/pail
+
+# Environment
+.env
+.env.backup
+.env.production
+
+# Logs
+npm-debug.log
+yarn-error.log
+*.log
+
+# IDE / Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.phpactor.json
+
+# Testing
+.phpunit.result.cache
+/coverage
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Swagger generated
+storage/api-docs/
+
+# Misc
+Homestead.yaml
+Homestead.json
+/.vagrant
+auth.json
+.DS_Store
+Thumbs.db
