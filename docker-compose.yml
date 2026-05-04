@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
-    container_name: laravel-api-app
+    container_name: optcg-tracker-app
     working_dir: /var/www
     volumes:
       - ./src:/var/www
@@ -14,7 +14,7 @@ services:
 
   nginx:
     image: nginx:stable-alpine
-    container_name: laravel-api-nginx
+    container_name: optcg-tracker-nginx
     ports:
       - "8000:80"
     volumes:
@@ -27,7 +27,7 @@ services:
 
   db:
     image: postgres:16-alpine
-    container_name: laravel-api-db
+    container_name: optcg-tracker-db
     restart: unless-stopped
     environment:
       POSTGRES_DB: laravel
