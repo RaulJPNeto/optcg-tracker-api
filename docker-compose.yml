@@ -1,0 +1,47 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: laravel-api-app
+    working_dir: /var/www
+    volumes:
+      - ./src:/var/www
+    depends_on:
+      - db
+    networks:
+      - laravel-network
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: laravel-api-nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - laravel-network
+
+  db:
+    image: postgres:16-alpine
+    container_name: laravel-api-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - laravel-network
+
+networks:
+  laravel-network:
+
+volumes:
+  postgres-data:
