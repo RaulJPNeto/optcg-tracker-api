@@ -160,8 +160,8 @@ Tier           → S, A, B, C, D
 
 ### Phase 1 — Base
 
-- [ ] Laravel project setup (Docker, Sanctum, Pint, Larastan, Swagger)
-- [ ] Migrations, Models, Enums
+- [x] Laravel project setup (Docker, Sanctum, Pint, Larastan, Swagger)
+- [x] Migrations, Models, Enums
 - [ ] Authentication + invitation system
 - [ ] Sets CRUD
 - [ ] Cards CRUD
@@ -199,7 +199,7 @@ Tier           → S, A, B, C, D
 ## Status
 
 ```
-⬜ Phase 1 — Base
+🔄 Phase 1 — Base
 ⬜ Phase 2 — Features
 ⬜ Phase 3 — Quality
 ⬜ Phase 4 — Frontend
