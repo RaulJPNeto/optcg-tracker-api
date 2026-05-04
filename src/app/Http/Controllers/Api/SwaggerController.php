@@ -6,7 +6,7 @@ use OpenApi\Attributes as OA;
 
 #[OA\Info(
     version: '1.0.0',
-    title: 'Laravel API',
+    title: 'REST API for tracking One Piece TCG Japanese spoilers, deck building and meta analysis.',
     description: 'REST API',
 )]
 #[OA\SecurityScheme(
