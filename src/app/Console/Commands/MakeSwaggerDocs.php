@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 class MakeSwaggerDocs extends Command
 {
     protected $signature = 'make:swagger {controller : Nome do controller (ex: TicketController)}';
-
     protected $description = 'Gera arquivo de documentação Swagger para um controller';
 
     public function handle(): void
@@ -61,7 +60,7 @@ class MakeSwaggerDocs extends Command
             }
 
             $method = strtoupper($route->methods()[0]);
-            $uri = '/'.$route->uri();
+            $uri = '/' . $route->uri();
             $actionName = Str::afterLast($action, '@');
             $protected = in_array('auth:sanctum', $route->gatherMiddleware());
 
