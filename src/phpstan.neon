@@ -8,3 +8,6 @@ parameters:
     level: 5
 
     treatPhpDocTypesAsCertain: false
+
+    ignoreErrors:
+        - '#Template type TDeclaringModel on class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo is not covariant#'
