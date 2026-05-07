@@ -156,56 +156,6 @@ Tier           → S, A, B, C, D
 
 ---
 
-## Roadmap
-
-### Phase 1 — Base
-
-- [ ] Laravel project setup (Docker, Sanctum, Pint, Larastan, Swagger)
-- [ ] Migrations, Models, Enums
-- [ ] Authentication + invitation system
-- [ ] Sets CRUD
-- [ ] Cards CRUD
-
-### Phase 2 — Features
-
-- [ ] Deck Builder (API)
-- [ ] Tier List + history
-- [ ] Events + notifications
-
-### Phase 3 — Quality
-
-- [ ] Swagger documentation
-- [ ] Feature tests
-- [ ] Pint + Larastan passing clean
-
-### Phase 4 — Frontend
-
-- [ ] React + Vite + Tailwind + Shadcn setup
-- [ ] Card listing and filters
-- [ ] Card detail page
-- [ ] Deck Builder (UI)
-- [ ] Tier List (UI)
-- [ ] Editor panel (card registration)
-
-### Phase 5 — Product
-
-- [ ] Deploy backend (Railway / Fly.io)
-- [ ] Deploy frontend (Vercel)
-- [ ] Custom domain
-- [ ] Google AdSense integration
-
----
-
-## Status
-
-```
-⬜ Phase 1 — Base
-⬜ Phase 2 — Features
-⬜ Phase 3 — Quality
-⬜ Phase 4 — Frontend
-⬜ Phase 5 — Product
-```
-
 # optcg-tracker-api
 
 REST API for tracking One Piece TCG Japanese spoilers, deck building and meta analysis.
