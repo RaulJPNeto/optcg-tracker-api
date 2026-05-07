@@ -11,18 +11,18 @@ class InvitationFactory extends Factory
     public function definition(): array
     {
         return [
-            'email'      => fake()->unique()->safeEmail(),
-            'token'      => Str::uuid(),
+            'email' => fake()->unique()->safeEmail(),
+            'token' => Str::uuid(),
             'invited_by' => User::factory()->admin(),
             'expires_at' => now()->addDays(7),
-            'used_at'    => null,
+            'used_at' => null,
         ];
     }
 
     public function used(): static
     {
         return $this->state([
-            'used_at'    => now()->subHour()->toDateTimeString(),
+            'used_at' => now()->subHour()->toDateTimeString(),
             'expires_at' => now()->addDays(7)->toDateTimeString(),
         ]);
     }
@@ -31,7 +31,7 @@ class InvitationFactory extends Factory
     {
         return $this->state([
             'expires_at' => now()->subDay()->toDateTimeString(),
-            'used_at'    => null,
+            'used_at' => null,
         ]);
     }
 
@@ -39,7 +39,7 @@ class InvitationFactory extends Factory
     {
         return $this->state([
             'expires_at' => now()->addDays(7)->toDateTimeString(),
-            'used_at'    => null,
+            'used_at' => null,
         ]);
     }
 }

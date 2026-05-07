@@ -16,7 +16,7 @@ class AuthService
 
         if (! $invitation->isValid()) {
             throw ValidationException::withMessages([
-                'invitation_token' => 'Este convite é inválido ou expirou.',
+                'invitation_token' => 'Este convite Ã© invÃ¡lido ou expirou.',
             ]);
         }
 
@@ -42,7 +42,7 @@ class AuthService
     {
         if (! Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
             throw ValidationException::withMessages([
-                'email' => 'Credenciais inválidas.',
+                'email' => 'Credenciais invÃ¡lidas.',
             ]);
         }
 

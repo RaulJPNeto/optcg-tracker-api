@@ -36,6 +36,7 @@ class User extends Authenticatable
         ];
     }
 
+    /**@return BelongsTo<User, Invitation>*/
     public function invitedBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'invited_by');

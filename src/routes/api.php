@@ -14,10 +14,13 @@ Route::prefix('auth')->group(function () {
     });
 });
 
+Route::prefix('invitations')->group(function () {
+    Route::get('/{token}', [InvitationController::class, 'show']);
+});
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('invitations')->group(function () {
         Route::get('/', [InvitationController::class, 'index']);
         Route::post('/', [InvitationController::class, 'store']);
-        Route::get('/{token}', [InvitationController::class, 'show']);
     });
 });
