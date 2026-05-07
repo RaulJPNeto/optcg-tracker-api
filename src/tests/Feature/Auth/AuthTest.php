@@ -20,11 +20,11 @@ class AuthTest extends TestCase
         ]);
 
         $response = $this->postJson('/api/auth/register', [
-            'name'                  => 'João Silva',
-            'email'                 => $invitation->email,
-            'password'              => 'password123',
+            'name' => 'João Silva',
+            'email' => $invitation->email,
+            'password' => 'password123',
             'password_confirmation' => 'password123',
-            'invitation_token'      => $invitation->token,
+            'invitation_token' => $invitation->token,
         ]);
 
         $response->assertStatus(201);
@@ -35,7 +35,7 @@ class AuthTest extends TestCase
         ]);
 
         $this->assertDatabaseHas('invitations', [
-            'token'  => $invitation->token,
+            'token' => $invitation->token,
         ]);
         $this->assertNotNull(
             Invitation::where('token', $invitation->token)->first()->used_at
@@ -47,11 +47,11 @@ class AuthTest extends TestCase
         $invitation = Invitation::factory()->expired()->create();
 
         $response = $this->postJson('/api/auth/register', [
-            'name'                  => 'João Silva',
-            'email'                 => $invitation->email,
-            'password'              => 'password123',
+            'name' => 'João Silva',
+            'email' => $invitation->email,
+            'password' => 'password123',
             'password_confirmation' => 'password123',
-            'invitation_token'      => $invitation->token,
+            'invitation_token' => $invitation->token,
         ]);
 
         $response->assertStatus(422);
@@ -62,11 +62,11 @@ class AuthTest extends TestCase
         $invitation = Invitation::factory()->used()->create();
 
         $response = $this->postJson('/api/auth/register', [
-            'name'                  => 'João Silva',
-            'email'                 => $invitation->email,
-            'password'              => 'password123',
+            'name' => 'João Silva',
+            'email' => $invitation->email,
+            'password' => 'password123',
             'password_confirmation' => 'password123',
-            'invitation_token'      => $invitation->token,
+            'invitation_token' => $invitation->token,
         ]);
 
         $response->assertStatus(422);
@@ -75,7 +75,7 @@ class AuthTest extends TestCase
     public function test_user_cannot_register_with_invalid_data(): void
     {
         $response = $this->postJson('/api/auth/register', [
-            'name'  => '',
+            'name' => '',
             'email' => 'email-invalido',
         ]);
 
@@ -85,12 +85,12 @@ class AuthTest extends TestCase
     public function test_user_can_login(): void
     {
         $user = User::factory()->create([
-            'email'    => 'joao@test.com',
+            'email' => 'joao@test.com',
             'password' => 'password123',
         ]);
 
         $response = $this->postJson('/api/auth/login', [
-            'email'    => 'joao@test.com',
+            'email' => 'joao@test.com',
             'password' => 'password123',
         ]);
 
@@ -105,7 +105,7 @@ class AuthTest extends TestCase
         ]);
 
         $response = $this->postJson('/api/auth/login', [
-            'email'    => 'joao@test.com',
+            'email' => 'joao@test.com',
             'password' => 'senha-errada',
         ]);
 
@@ -115,7 +115,7 @@ class AuthTest extends TestCase
     public function test_user_cannot_login_with_nonexistent_email(): void
     {
         $response = $this->postJson('/api/auth/login', [
-            'email'    => 'naoexiste@test.com',
+            'email' => 'naoexiste@test.com',
             'password' => 'password123',
         ]);
 
@@ -157,5 +157,4 @@ class AuthTest extends TestCase
 
         $response->assertStatus(401);
     }
-
 }
