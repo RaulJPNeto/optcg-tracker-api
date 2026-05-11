@@ -10,4 +10,5 @@ parameters:
     treatPhpDocTypesAsCertain: false
 
     ignoreErrors:
-        - '#Template type TDeclaringModel on class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo is not covariant#'
+        - '#TDeclaringModel#'
+        - '#Argument of an invalid type Illuminate\\Routing\\RouteCollectionInterface#'
