@@ -163,7 +163,7 @@ Tier           → S, A, B, C, D
 - [x] Laravel project setup (Docker, Sanctum, Pint, Larastan, Swagger)
 - [x] Migrations, Models, Enums
 - [x] Authentication + invitation system
-- [ ] Sets CRUD
+- [x] Sets CRUD
 - [ ] Cards CRUD
 
 ### Phase 2 — Features
